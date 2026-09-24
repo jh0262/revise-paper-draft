@@ -1,6 +1,6 @@
 # Manuscript revision rubric
 
-Use only the sections relevant to the user's request.
+Use only the sections relevant to the user's request. For Chinese algorithm manuscripts, combine the relevant sections with [Chinese algorithm writing](chinese-algorithm-writing.md); use [Algorithm evidence audit](algorithm-evidence-audit.md) for material technical claims.
 
 ## Introduction
 
@@ -29,12 +29,12 @@ Check:
 
 - visual hierarchy makes the comparison obvious;
 - identical variables retain identical encodings across figures;
-- baseline or control is visually subordinate but legible;
+- baselines and proposed methods are equally interpretable, without selective scales or obscured controls;
 - axes, units, uncertainty, sample size, and statistical marks are defined;
 - captions explain what, conditions, encodings, and takeaway without reproducing the Results section;
 - secondary sweeps and diagnostic plots move to supplementary material when appropriate.
 
-Do not claim that a figure must be understandable with literally no text. Require it to remain interpretable with the axes, legend, and caption.
+Do not claim that a figure must be understandable with literally no text. Require it to remain interpretable with the axes, legend, and caption. Distinguish selected best runs, representative runs, and aggregate statistics.
 
 ## Methods
 
@@ -48,6 +48,8 @@ Separate:
 - exploratory choices from preregistered or predefined choices;
 - primary analysis from sensitivity or robustness analysis.
 
+For algorithms, explain the changed operation and design rationale, not merely a list of named strategies. Do not fill missing settings with customary defaults or write intended effects as validated results.
+
 State code and data availability accurately. Do not imply that all journals require full public release or that restricted data imply misconduct. When public release is impossible, describe the restriction and provide the most reproducible lawful alternative.
 
 ## Results
@@ -59,7 +61,7 @@ Organize Results by research question or claim, not by the chronological order o
 3. direct the reader to the figure or table;
 4. state the immediate inference without extended speculation.
 
-Report absolute values alongside relative improvements when meaningful. Identify the baseline, uncertainty, sample size, and statistical or engineering significance. Do not hide negative or mixed results that alter the main claim.
+Report absolute values alongside relative improvements when meaningful. Identify the baseline, uncertainty, sample size, and statistical or engineering significance. Do not hide negative or mixed results that alter the main claim. Overall superiority does not alone identify an individual component's causal contribution.
 
 ## Discussion
 
@@ -75,19 +77,13 @@ Create intellectual tension only when the evidence supports it. Agreement with p
 
 ## Abstract
 
-Build a self-contained abstract from:
+Build a self-contained abstract covering necessary context, a specific gap, the approach and key mechanisms, the strongest supported findings, and the bounded contribution. These are information functions, not fixed sentence or paragraph counts.
 
-1. one sentence of context;
-2. one sentence defining the gap;
-3. one or two sentences describing the approach;
-4. one or two sentences stating the most important quantitative findings;
-5. one sentence defining the contribution or implication.
-
-Adapt length and structure to the venue. Prefer specific results over generic claims such as "important theoretical and practical value." Limit repeated self-reference, but do not apply a universal ban on "we," "this study," or "this paper."
+Adapt length and structure to the venue. Prefer specific results over generic claims such as "important theoretical and practical value." Limit repeated self-reference, but do not apply a universal ban on "we," "this study," or "this paper." Do not insert illustrative values or planned validation as completed results.
 
 ## Conclusion
 
-Answer the research question without introducing new evidence. State the contribution, strongest result, applicable conditions, and next research need. Do not duplicate the abstract or expand the scope beyond the validated cases.
+Answer the research question without introducing new evidence. State the contribution, strongest result, applicable conditions, and next research need. Do not duplicate the abstract or expand the scope beyond the validated cases. Link future work to a specific unresolved limitation.
 
 ## References
 
@@ -99,7 +95,7 @@ Build a functional citation set containing, where relevant:
 - conflicting or boundary-setting evidence;
 - sources for methods, datasets, metrics, and models.
 
-Judge a source by relevance, originality, methodological quality, and support for the local claim—not by journal prestige alone. Verify bibliographic details and whether each source actually supports the sentence citing it.
+Judge a source by relevance, originality, methodological quality, and support for the local claim—not by journal prestige alone. Verify bibliographic details and whether each source actually supports the sentence citing it. Style sources do not validate the current manuscript's results; source observations and editorial recommendations remain distinct.
 
 ## Reviewer responses
 
@@ -133,3 +129,4 @@ Use verbs consistent with evidence:
 - **Moderate:** obscures logic, metrics, conditions, or figure meaning.
 - **Minor:** local wording, notation, formatting, or style issue.
 
+Protect scientific content from silent changes. Explain substantive corrections and retain author queries when evidence cannot resolve a conflict.

@@ -1,7 +1,7 @@
 interface:
   display_name: 论文初稿系统修订
-  short_description: 从科学主张、证据链、复现性和章节逻辑系统诊断并修订学术论文初稿
-  default_prompt: 使用 $revise-paper-draft 系统审查并修订这篇论文初稿，保留技术含义并标出证据缺口。
+  short_description: 系统修订论文逻辑与证据，支持中文算法论文语言、机制描述和实验论证审校
+  default_prompt: 使用 $revise-paper-draft 修订这篇论文；中文算法稿启用专用语言与证据规则，保留技术含义、公式和数据，单列待核实问题。
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:

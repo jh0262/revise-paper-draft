@@ -1,6 +1,6 @@
 # Engineering and robotics revision checks
 
-Apply this reference to mechanics, industrial robotics, finite-element simulation, multibody dynamics, control, parameter identification, optimization, reliability, and digital-twin papers.
+Apply this reference to mechanics, industrial robotics, finite-element simulation, multibody dynamics, control, parameter identification, optimization, reliability, and digital-twin papers. Select checks relevant to the claim and revision scope; do not demand every possible experiment for a local edit.
 
 ## Model definition
 
@@ -13,7 +13,7 @@ Check that the manuscript defines as applicable:
 - state variables, inputs, outputs, disturbances, constraints, and initial conditions;
 - governing equations and the meaning and units of every symbol.
 
-Require a reason for each major simplification and discuss its likely effect on the outputs.
+Require a reason for each major simplification and discuss its likely effect on the outputs. Report unresolved text/formula conflicts before proposing a substantive correction; do not silently change a sign or parameter.
 
 ## Simulation reproducibility
 
@@ -29,7 +29,7 @@ For finite-element, multibody, or coupled simulation, check:
 - coupling direction, exchanged variables, synchronization, and interpolation;
 - verification against an analytical case, independent solver, experiment, or benchmark.
 
-Do not accept a visually plausible contour plot as validation by itself.
+Do not accept a visually plausible contour plot as validation by itself. A simulated test substructure or sensor signal is not a physical measurement merely because of its name.
 
 ## Experimental reproducibility
 
@@ -42,6 +42,8 @@ Check:
 - environmental and operating conditions;
 - uncertainty, repeatability, and error propagation;
 - safety limits that constrain the tested operating envelope.
+
+Separate numerical validation, hardware-in-the-loop, scaled prototypes, full-scale experiments, and field tests. Do not promote the evidence level during language editing.
 
 ## Parameter identification
 
@@ -56,7 +58,7 @@ Check:
 - confidence intervals, covariance, sensitivity, or uncertainty estimates;
 - residual structure and cross-condition validation.
 
-Improved fitting error alone does not establish physically correct parameters.
+Improved fitting error alone does not establish physically correct parameters. Population concentration does not alone establish proximity to an unknown true parameter.
 
 ## Optimization and surrogate modelling
 
@@ -71,7 +73,7 @@ Check:
 - Pareto-set decision rule and engineering feasibility of selected solutions;
 - post-optimization reanalysis or experiment using the high-fidelity model.
 
-Do not report only a visually better Pareto front. Require quantitative indicators and repeatability.
+Do not report only a visually better Pareto front. Seek quantitative evidence and repeatability appropriate to the claim. Use relevant [algorithm evidence checks](algorithm-evidence-audit.md) for archive, adaptive, RL, statistical, ablation, and complexity claims; use [Chinese algorithm writing](chinese-algorithm-writing.md) for Chinese prose.
 
 ## Reliability analysis
 
@@ -83,6 +85,10 @@ Check:
 - time dependence, load cases, and model uncertainty;
 - reliability target and engineering interpretation;
 - validation against direct simulation or sufficient sampling where feasible.
+
+## Control and deployment boundaries
+
+Distinguish offline tuning, online adaptation, and real-time execution. Timing claims need corresponding deadlines, measured latency, hardware, and operating conditions. An inverse-kinematics solver that avoids Jacobian inversion does not by itself eliminate physical singular configurations. Observed tracking improvement does not automatically establish global stability or safety.
 
 ## Recommended evidence sequence
 
@@ -98,13 +104,13 @@ Adapt rather than force this sequence:
 
 ## Common overclaims
 
-Flag and correct:
+Flag and propose evidence-matched revisions for:
 
 - treating a single robot posture as model-wide validation;
 - treating simulation-experiment agreement at one load as general validity;
-- equating lower prediction error with correct physical mechanism;
-- comparing optimizers using unequal evaluations or one random run;
-- declaring robustness without perturbation or uncertainty testing;
+- equating lower prediction error with a correct physical mechanism;
+- asserting fair optimizer superiority with unequal evaluations or one random run;
+- treating random-seed repeatability as proof of noise, load, or parameter robustness;
 - claiming a digital twin when the work only provides offline simulation;
 - claiming real-time capability without measured latency and hardware conditions;
 - claiming engineering deployability without constraints, safety, or computational cost.
@@ -112,4 +118,3 @@ Flag and correct:
 ## Code or algorithm additions
 
 If the revision task expands into programming, control implementation, or algorithm code, present an Input/Output/Process analysis and flowchart logic before code. Keep proposed code separate from experimentally verified implementation.
-

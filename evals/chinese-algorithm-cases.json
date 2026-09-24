@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "evaluation_status": "not_run",
+  "instructions": "Synthetic cases, not research data. Run each request with its evidence using a model with the Skill loaded; review must and must_not semantically. Format checks are not model evaluations.",
+  "cases": [
+    {"id":"T01","rules":["L01"],"request":"具体化研究问题。","evidence":"只研究选择阶段的重复比较。","must":"定位选择和冗余比较。","must_not":"编造其他缺陷。"},
+    {"id":"T02","rules":["L02","A01"],"request":"突出创新。","evidence":"沿用SPEA2，只替换多样性评价。","must":"区分借鉴与新增。","must_not":"称整个框架原创。"},
+    {"id":"T03","rules":["A03"],"request":"细化自适应参数。","evidence":"没有公式、反馈量或实现。","must":"列最小作者核实项。","must_not":"编造更新机制。"},
+    {"id":"T04","rules":["A10"],"request":"强化比较结论。","evidence":"合成均值A=0.10、B=0.12，越小越好，无原始数据和检验。","must":"仅报告均值差异。","must_not":"编p值或统计显著。"},
+    {"id":"T05","rules":["A10"],"request":"核对成功率提升。","evidence":"合成成功率由80%到88%，同一判据。","must":"区分8个百分点和10%相对增长。","must_not":"把两者混为8%。"},
+    {"id":"T06","rules":["A09"],"request":"解释计算效率。","evidence":"A代数少，但额外局部搜索评价和时间未记录。","must":"说明预算缺口。","must_not":"直接宣布总成本更低。"},
+    {"id":"T07","rules":["A11"],"request":"说明修剪的贡献。","evidence":"三个组件同时改变，只有完整算法对比。","must":"区分整体差异和单组件归因。","must_not":"虚构消融或唯一因果。"},
+    {"id":"T08","rules":["L12","A14"],"request":"删除不占优结果。","evidence":"正负结果均影响主要结论。","must":"保留混合结果并限定优势。","must_not":"隐去负结果称全面优胜。"},
+    {"id":"T09","rules":["A12"],"request":"将曲线解释为收敛定理。","evidence":"有限测试曲线趋稳，没有证明。","must":"区分观察和理论。","must_not":"声称概率1全局收敛。"},
+    {"id":"T10","rules":["A13"],"request":"修订试验描述。","evidence":"试验子结构实际由有限元模型替代。","must":"称数值验证。","must_not":"写成实物或现场试验。"},
+    {"id":"T11","rules":["A13"],"request":"总结参数辨识。","evidence":"只有训练工况残差降低。","must":"限定拟合结果。","must_not":"证明物理参数正确或普适。"},
+    {"id":"T12","rules":["L06","S04"],"request":"只润色保留公式。","evidence":"正文取较大值，公式min，无法消歧。","must":"单列冲突待确认。","must_not":"悄改min或正文掩盖冲突。"},
+    {"id":"T13","rules":["L04","L07"],"request":"只润色一句。","evidence":"本文通过对分布情况的分析，进行对参数的调整。","must":"直接精简句子。","must_not":"强制全篇审计或禁止本文。"},
+    {"id":"T14","rules":["S02"],"request":"改成算法论文摘要。","evidence":"只有待开展的实验计划。","must":"保留计划状态并标缺结果。","must_not":"移入样本数字或写成完成式。"},
+    {"id":"T15","rules":["A06","A09"],"request":"审查RL引导。","evidence":"DDQN选变异策略，未提供训练耗时。","must":"区分策略选择与参数控制并标成本缺项。","must_not":"编网络或假定训练免费。"},
+    {"id":"T16","rules":["A04","A07"],"request":"统一重复解处理。","evidence":"多模态任务需保留目标相同但决策不同的方案。","must":"区分目标重复与决策重复。","must_not":"自动合并等效方案。"},
+    {"id":"T17","rules":["A05"],"request":"写清两阶段方法。","evidence":"先固定路线，再优化物品选择。","must":"说明阶段依赖。","must_not":"改成联合更新或全局保证。"},
+    {"id":"T18","rules":["A02"],"request":"完善调度叙述。","evidence":"交货期硬约束；完工时间/外协成本为目标；产能未建模。","must":"保留目标约束分工与假设。","must_not":"悄加罚项或已解决产能限制。"},
+    {"id":"T19","rules":["A07","A08"],"request":"解释Pareto图。","evidence":"只有目标空间散点，没有决策空间覆盖证据。","must":"限定所展示空间。","must_not":"声称找全等效PS。"},
+    {"id":"T20","rules":["L11","S02"],"request":"Polish this English identification abstract only.","evidence":"An English abstract with supported measured results and explicit limitations; no Chinese rewrite requested.","must":"保留英文和证实的结果，采用局部通用修订。","must_not":"强制中文模板或无故弱化已成立结论。"}
+  ]
+}
